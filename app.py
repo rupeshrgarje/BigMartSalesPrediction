@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import sklearn
 
 # === Load Model and Version Info from Pickle ===
 with open("bigmart_best_model.pkl", "rb") as f:
@@ -54,3 +55,4 @@ if st.button("Predict Sales"):
     # Make prediction
     prediction = model.predict(input_df)[0]
     st.success(f"📈 Predicted Item Outlet Sales: ₹{prediction:.2f}")
+
